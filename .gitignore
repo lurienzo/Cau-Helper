@@ -1,7 +1,7 @@
 # Sorgenti di build: contengono i dati clinici IN CHIARO e la password di cifratura.
 # Il repository e pubblico: qui va pubblicato solo index.html con il payload cifrato.
 # Per rigenerare index.html:  node _build/merge.js && python _build/rebuild.py
-# Per verificare:             node _build/test.mjs
+# Per verificare:             node _build/test2.mjs   (841 controlli)
 _build/
 
 # Clone separato usato in passato per il deploy (stesso remote)
