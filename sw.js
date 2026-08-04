@@ -7,7 +7,7 @@
    - tutto il resto: rete con fallback alla cache.
    I dati clinici sono dentro index.html (payload cifrato): non serve altro per l'offline. */
 
-const VER = 'cauh-v4.2';
+const VER = 'cauh-v4.3';
 const SHELL = VER + '-shell';
 const RUNTIME = VER + '-rt';
 
