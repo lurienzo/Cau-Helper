@@ -1,8 +1,14 @@
 # Sorgenti di build: contengono i dati clinici IN CHIARO e la password di cifratura.
 # Il repository e pubblico: qui va pubblicato solo index.html con il payload cifrato.
-# Per rigenerare index.html:  node _build/merge.js && python _build/rebuild.py
-# Per verificare:             node _build/test2.mjs   (841 controlli)
+# Per rigenerare e verificare index.html:  sh _build/pass.sh
+# (Python gira dal venv _build/.venv, creato con: python3 -m venv _build/.venv && _build/.venv/bin/pip install cryptography)
 _build/
+
+# Memoria e istruzioni di Claude: contengono contesto personale e riferimenti alla
+# pipeline di cifratura. NON vanno nel repository pubblico.
+memoria-claude/
+CLAUDE.md
+.claude/
 
 # Clone separato usato in passato per il deploy (stesso remote)
 deploy/
