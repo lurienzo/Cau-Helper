@@ -7,7 +7,7 @@
    - tutto il resto: rete con fallback alla cache.
    I dati clinici sono dentro index.html (payload cifrato): non serve altro per l'offline. */
 
-const VER = 'cauh-v4.6';
+const VER = 'cauh-v4.7';
 const SHELL = VER + '-shell';
 const RUNTIME = VER + '-rt';
 
@@ -16,13 +16,16 @@ const PRECACHE = [
   './index.html',
   './manifest.webmanifest',
   './icon.svg',
-  './icon-maskable.svg'
+  './icon-maskable.svg',
+  './apple-touch-icon.png',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(SHELL)
-      .then(c => c.addAll(PRECACHE))
+      .then(c => c.addAll(PRECACHE.map(u => new Request(u, { cache: 'reload' }))))
       .then(() => self.skipWaiting())
       .catch(() => self.skipWaiting())
   );
@@ -43,7 +46,8 @@ function isShell(url) {
     (url.pathname.endsWith('/') ||
      url.pathname.endsWith('/index.html') ||
      url.pathname.endsWith('/manifest.webmanifest') ||
-     url.pathname.endsWith('.svg'));
+     url.pathname.endsWith('.svg') ||
+     url.pathname.endsWith('.png'));
 }
 
 function isFont(url) {
