@@ -1,7 +1,7 @@
 {
   "name": "CAU Helper - Riferimento Clinico",
   "short_name": "CAU Helper",
-  "description": "Riferimento clinico per Centri di Assistenza e Urgenza: 159 patologie, terapie su linee guida, prontuario e score.",
+  "description": "Riferimento clinico per Centri di Assistenza e Urgenza: 196 patologie, terapie su linee guida, prontuario e score.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
